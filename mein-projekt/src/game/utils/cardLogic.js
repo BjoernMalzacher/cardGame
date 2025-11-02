@@ -8,7 +8,7 @@ export const getCardValue = (card) => {
     case 'Q': return 12;
     case 'J': return 11;
     default: 
-      return parseInt(card.rank, 10);
+      return parseInt(card.rank);
   }
 };
 
@@ -44,7 +44,7 @@ export const calculateBattleScore = (playedCards) => {
     blackScore *= 2;
   }
 
-  return redScore + blackScore;
+  return redScore > blackScore? redScore : blackScore;
 };
 
 // --- Deck Generation ---
